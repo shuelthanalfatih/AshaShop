@@ -1,0 +1,63 @@
+/* Basic style: make it disappear form screen */
+.fade-in,
+.fade-in-up,
+.slide-in-left,
+.slide-in-right,
+.scale-up {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* First state animation */
+
+.fade-in-up {
+  transform: translateY(30px);
+}
+
+.slide-in-left {
+  transform: translateX(-30px);
+}
+
+.slide-in-right {
+  transform: translateX(1rem);
+}
+
+.scale-up {
+  transform: scale(0.1);
+}
+
+/* final state of animation */
+/* .fade-in-up.show,
+.fade-in.show,
+.slide-in-left.show,
+.slide-in-right.show,
+.scale-up.show {
+  opacity: 1;
+  transform: scale(1);
+  transform: translateX(0);
+} */
+
+
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-up.show {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+}

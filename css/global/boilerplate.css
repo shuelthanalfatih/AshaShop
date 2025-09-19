@@ -1,0 +1,135 @@
+:root {
+  /* Color */
+  --color-red-700: hsl(0, 96%, 32%);
+  --color-amber-500: hsl(34, 44%, 69%);
+  --color-amber-light-500: hsl(34, 45%, 78%);
+  --color-white: #ffffff;
+  --color-red-hover: hsl(0, 96%, 35%);
+
+  /* spacing */
+  --spacing-10: calc(1rem - 6px);
+  --spacing-20: calc(1rem + 4px);
+  --spacing-80: 5rem;
+  --spacing-112: 8rem;
+
+  /* Font size */
+  --body-text: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  --h6: clamp(1.125rem, 1rem + 0.625vw, 2rem);
+  --h4: clamp(1rem, 1.3rem + 1vw, 2.25rem);
+  --h3: clamp(0.75rem, 1rem + 1.375vw, 2.875rem);
+  --h2: clamp(1rem, 1.4rem + 1.75vw, 3.5rem);
+  --h1: clamp(1.8rem, 2.3rem + 2.25vw, 5.61rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* outline: 2px solid black; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  background-color: var(--color-amber-light-500);
+  overflow-x: hidden;
+}
+
+/* Logo Roti Maryam */
+.logo-maryam,
+.logo-roti {
+  font-size: var(--h3);
+  font-weight: bold;
+  color: var(--color-amber-light-500);
+}
+
+.logo-roti {
+  color: var(--color-white);
+}
+
+section,
+footer {
+  padding:0 min(6.25rem, 5%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+  font-weight: 700;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--h1);
+  color: var(--color-amber-light-500);
+}
+
+h3 {
+  font-size: var(--h3);
+  color: var(--color-amber-light-500);
+}
+
+h2 {
+  font-size: var(--h2);
+  color: var(--color-red-700);
+  padding-bottom: var(--spacing-10);
+  position: relative;
+  width: max-content;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  border-radius: 1rem;
+  background-color: var(--color-red-700);
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+}
+
+.details h2 {
+  padding-top: var(--spacing-80);
+}
+
+.details p {
+  line-height: 1.6;
+  letter-spacing: 1px;
+  margin-top: var(--spacing-20);
+  font-size: var(--body-text);
+}
+
+h6 {
+  font-size: var(--h5);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* H2 our products and Testimonial */
+@media (min-width: 48rem) {
+  .details h2 {
+    margin: 0 auto;
+    padding-top: var(--spacing-80);
+  }
+
+  .details p {
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    margin-top: var(--spacing-20);
+    font-size: var(--body-text);
+  }
+}

@@ -1,0 +1,44 @@
+/* General Setting */
+.btn {
+  cursor: pointer;
+  border: transparent;
+  display: inline-block;
+}
+
+/* Button: Hero-Section and About us   */
+.btn-cta {
+  font-size: var(--h4);
+  padding: clamp(1rem, 1vw, 1.25rem) clamp(2rem, 3vw, 2.5rem);
+  margin: var(--spacing-80) auto;
+  border-radius: 50rem;
+  background-color: var(--color-red-700);
+  color: var(--color-amber-light-500);
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-cta:hover {
+  background-color: var(--color-red-hover);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.btn-product {
+  font-size: var(--h6);
+  color: var(--color-red-700);
+  font-weight: 700;
+  padding: .5rem 1rem;
+  border-radius: 5rem;
+  background-color: var(--color-amber-light-500) ;
+}
+
+.btn-product:hover {
+  background-color: var(--color-amber-500);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

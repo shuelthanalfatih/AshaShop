@@ -1,0 +1,24 @@
+.overlay {
+  border-image: fill 1
+    linear-gradient(
+      148deg,
+      rgba(224, 202, 174, 0.4) 0%,
+      rgba(160, 3, 3, 0.4) 100%
+    );
+}
+
+.hero-section {
+  height: 100vh;
+  background-image: url("../../assets/img/product-iamges/tahu_baso_banjar_homepage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-container {
+  padding-top: 8rem;
+}

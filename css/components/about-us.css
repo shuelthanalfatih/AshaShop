@@ -1,0 +1,46 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  padding-top: var(--spacing-20);
+}
+
+.about-us .desc-about button {
+  display: none;
+}
+
+.about-us .desc-about p {
+  margin-top: var(--spacing-20);
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-size: var(--body-text);
+  width: 95%;
+}
+
+.image-about {
+  position: relative;
+}
+
+@media (min-width: 48rem) {
+  .about-us {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding-top: var(--spacing-80);
+  }
+
+  .about-us .desc-about {
+    flex: 1;
+  }
+
+  .image-about {
+    flex: 1;
+    width: 50%;
+    padding-top: 5rem;
+  }
+
+  .about-us .desc-about button {
+    display: inline-block;
+  }
+}

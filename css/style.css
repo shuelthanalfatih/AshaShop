@@ -1,0 +1,14 @@
+/* Global */
+@import url('./global/fonts.css');
+@import url('./global/boilerplate.css');
+@import url('./global/buttons.css');
+@import url('./global/animations.css');
+
+/* Components */
+@import url('./components/header.css');
+@import url('./components/hero-section.css');
+@import url('./components/about-us.css');
+@import url('./components/our-product.css');
+@import url('./components/testimonial.css');
+@import url('./components/footer.css');
+
