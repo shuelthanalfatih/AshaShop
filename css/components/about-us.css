@@ -1,11 +1,27 @@
+/* --- ABOUT US (Ponsel - Default) --- */
 .about-us {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
-  padding-top: var(--spacing-20);
+  /* Penting: Menggunakan MIN-HEIGHT untuk mencegah tumpang tindih */
+  min-height: 100vh; 
+  padding: var(--spacing-40) var(--spacing-20); /* Padding aman */
 }
 
+/* Pastikan elemen anak mengambil lebar penuh di ponsel */
+.about-us .desc-about {
+  width: 100%;
+  order: 2; /* Agar deskripsi tampil di bawah gambar, jika diperlukan */
+}
+
+.image-about {
+  position: relative;
+  width: 100%; 
+  margin-bottom: var(--spacing-30);
+  order: 1; /* Agar gambar tampil di atas deskripsi */
+}
+
+/* Style dari CSS lama Anda */
 .about-us .desc-about button {
   display: none;
 }
@@ -18,26 +34,26 @@
   width: 95%;
 }
 
-.image-about {
-  position: relative;
-}
-
+/* Penyesuaian Media Query untuk Desktop */
 @media (min-width: 48rem) {
   .about-us {
     flex-direction: row;
     justify-content: center;
-    align-content: center;
+    align-items: center; 
+    min-height: unset; 
     padding-top: var(--spacing-80);
   }
 
   .about-us .desc-about {
     flex: 1;
+    order: unset;
   }
 
   .image-about {
     flex: 1;
     width: 50%;
     padding-top: 5rem;
+    order: unset;
   }
 
   .about-us .desc-about button {

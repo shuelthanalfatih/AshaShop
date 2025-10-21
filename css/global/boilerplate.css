@@ -7,8 +7,10 @@
   --color-red-hover: hsl(0, 96%, 35%);
 
   /* spacing */
-  --spacing-10: calc(1rem - 6px);
-  --spacing-20: calc(1rem + 4px);
+  --spacing-10: calc(1rem - 6px); /* 10px */
+  --spacing-20: calc(1rem + 4px); /* 20px */
+  --spacing-30: 2rem; /* 32px - Ditambahkan untuk jarak aman */
+  --spacing-40: 2.5rem; /* 40px - Ditambahkan untuk padding */
   --spacing-80: 5rem;
   --spacing-112: 8rem;
 
@@ -27,7 +29,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* outline: 2px solid black; */
 }
 
 html {
@@ -56,7 +57,8 @@ body {
 
 section,
 footer {
-  padding:0 min(6.25rem, 5%);
+  /* Hapus padding vertikal di sini, biarkan setiap section yang mengatur padding-top/bottom-nya sendiri */
+  padding:0 min(6.25rem, 5%); 
 }
 
 h1,
@@ -98,7 +100,8 @@ h2::after {
 }
 
 .details h2 {
-  padding-top: var(--spacing-80);
+  /* Hapus padding-top di sini, biarkan section yang mengatur */
+  /* padding-top: var(--spacing-80); */ 
 }
 
 .details p {
@@ -121,7 +124,8 @@ img {
 /* H2 our products and Testimonial */
 @media (min-width: 48rem) {
   .details h2 {
-    margin: 0 auto;
+    /* Margin auto agar h2 berada di tengah di desktop */
+    margin: 0 auto; 
     padding-top: var(--spacing-80);
   }
 
@@ -131,5 +135,9 @@ img {
     letter-spacing: 1px;
     margin-top: var(--spacing-20);
     font-size: var(--body-text);
+    /* Batasi lebar di desktop agar paragraf tidak terlalu panjang */
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
   }
 }

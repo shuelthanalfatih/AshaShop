@@ -3,9 +3,11 @@
   cursor: pointer;
   border: transparent;
   display: inline-block;
+  /* Tambahkan ini untuk menghilangkan garis bawah */
+  text-decoration: none; 
 }
 
-/* Button: Hero-Section and About us   */
+/* Button: Hero-Section and About us */
 .btn-cta {
   font-size: var(--h4);
   padding: clamp(1rem, 1vw, 1.25rem) clamp(2rem, 3vw, 2.5rem);
@@ -36,6 +38,8 @@
   padding: .5rem 1rem;
   border-radius: 5rem;
   background-color: var(--color-amber-light-500) ;
+  /* Tambahkan ini juga, untuk memastikan tombol produk juga tanpa garis bawah */
+  text-decoration: none; 
 }
 
 .btn-product:hover {

@@ -1,11 +1,18 @@
+/* --- OUR PRODUCTS (Ponsel - Default) --- */
+
+/* Mengatur Tata Letak Kartu Produk */
 .our-products .variant-rasa {
   display: flex;
-  flex-wrap: wrap;
-  padding-top: var(--spacing-20);
-  gap: calc(var(--spacing-20) + 10px);
+  /* Mengubah flex-wrap menjadi column pada ponsel untuk menumpuk vertikal */
+  flex-direction: column; 
+  /* flex-wrap: wrap; <--- Dihapus di ponsel agar hanya satu kolom */
+  padding-top: var(--spacing-40); /* Menggunakan spacing yang lebih besar untuk jarak aman */
+  gap: var(--spacing-30); /* Menggunakan spacing yang sudah didefinisikan */
 }
 
+/* Card Produk Individual */
 .variant-rasa .card-products {
+  width: 100%; /* SANGAT PENTING: Memaksa kartu mengambil lebar penuh di ponsel */
   cursor: pointer;
   overflow: hidden;
   background-color: var(--color-red-700);
@@ -17,8 +24,11 @@
 
 .card-products .card-details {
   display: flex;
+  /* Di ponsel, kita ingin rincian ditumpuk vertikal untuk menghemat ruang */
+  flex-direction: column; 
   padding: var(--spacing-20);
-  justify-content: space-between;
+  /* justify-content: space-between; <--- Dinonaktifkan di ponsel */
+  gap: var(--spacing-20); 
 }
 
 .card-details .name-stars,
@@ -39,16 +49,6 @@
   transform: translateY(-2px);
 }
 
-@media (min-width: 48rem) {
-  .our-products .variant-rasa {
-    padding-top: var(--spacing-80);
-  }
-
-  .our-products .variant-rasa .card-products {
-    width: 48%;
-  }
-}
-
 .new-tag {
   background-color: var(--color-amber-light-500);
   color: var(--color-red-700);
@@ -67,4 +67,26 @@
   margin-top: -10px;
   margin-bottom: 10px;
   text-align: start;
+}
+
+/* --- MEDIA QUERY (Desktop/Tablet) --- */
+@media (min-width: 48rem) {
+  .our-products .variant-rasa {
+    /* Kembali ke pengaturan flex row untuk desktop */
+    flex-direction: row;
+    flex-wrap: wrap; 
+    padding-top: var(--spacing-80);
+    gap: calc(var(--spacing-20) + 10px);
+  }
+
+  .our-products .variant-rasa .card-products {
+    /* Lebar agar 2 kartu muat per baris di desktop/tablet */
+    width: 48%; 
+  }
+  
+  .card-products .card-details {
+    /* Kembali ke flex-row di desktop */
+    flex-direction: row; 
+    justify-content: space-between;
+  }
 }
