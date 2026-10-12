@@ -1,0 +1,62 @@
+/* components */
+@import url('components/hero.css');
+@import url('components/about.css');
+@import url('components/navbar.css');
+@import url('components/hero2..css');
+@import url('components/products.css');
+@import url('components/comments.css');
+@import url('components/contact.css');
+@import url('components/footer.css');
+
+/* Global */
+:root {
+    --background: #E5D3B3;
+    --Primary: #6B633F;
+    --accent: #B34E22;
+    --text: #504932;
+
+    --background-hero2: #D8DCCD;
+    --Primary-hero2: #346492;
+    --accent-hero2: #7292a9;
+    --text-hero2: #356492;
+}
+
+body[data-theme='night'] {
+    --background: var(--background-hero2);
+    --Primary: var(--Primary-hero2);
+    --accent: var(--accent-hero2);
+    --text: var(--text-hero2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Media Queries */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 62%;
+    }
+}
+

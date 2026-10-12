@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AshaShopp</title>
+
+    <!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+ <!-- Icon -->
+ <script src="https://unpkg.com/feather-icons"></script>
+    
+<!-- CSS -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- alphine -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+<body data-theme="day">
+    <nav class="navbar">
+        <a href="#" class="navbar-logo"><span>Asha</span>Shopp.</a>
+
+        <div class="navbar-nav" id="navbar-nav">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#comments">Komentar</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <button class="menu-overlay" type="button" aria-label="Tutup menu" tabindex="-1"></button>
+
+        <div class="navbar-extra">
+            <button type="button" class="mode-switch" id="mode-toggle" aria-label="Ganti mode produk" aria-pressed="false">
+                <span class="mode-switch__icon" aria-hidden="true">🍽️</span>
+                <span class="mode-switch__label">Food</span>
+            </button>
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="#" id="humburger-menu" aria-label="Buka menu" aria-controls="navbar-nav" aria-expanded="false"><i data-feather="menu"></i></a>
+            <button type="button" class="bag-trigger" id="shopping-bag" aria-label="Buka tas belanja" aria-controls="bag-drawer" aria-expanded="false">
+                <i data-feather="shopping-bag" aria-hidden="true"></i>
+                <span class="bag-count" data-bag-count hidden>0</span>
+            </button>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search...">
+            <label for="search-box"><i data-feather="search"></i></label>
+        </div>
+    </nav>
+
+    <section class="hero-mode" id="home" aria-label="Pilihan mode produk">
+        <button type="button" class="hero-mode__panel hero-mode__panel--day is-active" data-mode="day" aria-pressed="true">
+            <span class="hero-mode__image" aria-hidden="true"></span>
+            <span class="hero-mode__content">
+                <strong>AshaShopp Food</strong>
+                <small>Rasa hangat, hidangan khas buat momen santai.</small>
+            </span>
+        </button>
+
+        <button type="button" class="hero-mode__panel hero-mode__panel--night" data-mode="night" aria-pressed="false">
+            <span class="hero-mode__image" aria-hidden="true"></span>
+            <span class="hero-mode__content">
+                <strong>AshaShopp Bucket</strong>
+                <small>Pesan romantis dengan sentuhan malam yang elegan.</small>
+            </span>
+        </button>
+    </section>
+
+    <section class="about-showcase" id="about" aria-label="Tentang AshaShopp">
+        <div class="about-mode is-visible" data-about="day">
+            <div class="about-copy">
+                <span class="section-tag">About Food</span>
+                <h2>AshaShopp Food</h2>
+                <p>
+                    Menghadirkan masakan dengan rasa yang autentik, bahan yang fresh,
+                    dan penyajian yang hangat. Cocok untuk makan siang, santapan keluarga, hingga acara kecil bersama teman.
+                </p>
+            </div>
+            <div class="about-visual about-visual--food">
+                <img src="assets/img/aboutus.png" alt="Asha Food">
+            </div>
+        </div>
+
+        <div class="about-mode" data-about="night">
+            <div class="about-copy">
+                <span class="section-tag">About Bucket</span>
+                <h2>AshaShopp Bucket</h2>
+                <p>
+                    Menghadirkan pilihan buket bunga custom untuk momen spesial,
+                    mulai dari ucapan syukur, hadiah romantis, hingga dekorasi acara malam yang memukau.
+                </p>
+            </div>
+            <div class="about-visual about-visual--bucket">
+                <img src="assets/img/aboutBucket.jpg" alt="Asha Bucket">
+            </div>
+        </div>
+    </section>
+
+    <section class="product-showcase" id="menu" aria-labelledby="products">
+        <div class="product-heading">
+            <span class="section-tag">Pilihan AshaShopp</span>
+            <h2 id="products">Produk Kami</h2>
+        </div>
+
+        <div class="menu-mode is-visible" data-menu="day" aria-label="Produk AshaFood">
+            <h3>AshaFood</h3>
+            <div class="product-grid">
+                <article class="product-item">
+                    <button type="button" class="product-detail-trigger" data-product-detail aria-haspopup="dialog" aria-label="Lihat detail Tahu Bakso Pedas">
+                        <span class="product-art">
+                        <img src="assets/img/product/tahu_bakso_pedas.png" alt="Tahu Bakso Pedas">
+                        </span>
+                        <span class="product-name">Tahu Bakso Pedas</span>
+                    </button>
+                    <button type="button" class="add-to-bag" aria-label="Masukkan Tahu Bakso Pedas ke tas">
+                        <i data-feather="shopping-bag" aria-hidden="true"></i>
+                    </button>
+                </article>
+                <article class="product-item">
+                    <button type="button" class="product-detail-trigger" data-product-detail aria-haspopup="dialog" aria-label="Lihat detail Gyoza Dimsum">
+                        <span class="product-art">
+                        <img src="assets/img/product/gyoza_dimsum.png" alt="Gyoza Dimsum">
+                        </span>
+                        <span class="product-name">Gyoza Dimsum</span>
+                    </button>
+                    <button type="button" class="add-to-bag" aria-label="Masukkan Gyoza Dimsum ke tas">
+                        <i data-feather="shopping-bag" aria-hidden="true"></i>
+                    </button>
+                </article>
+                <article class="product-item">
+                    <button type="button" class="product-detail-trigger" data-product-detail aria-haspopup="dialog" aria-label="Lihat detail Tahu Walik">
+                        <span class="product-art">
+                        <img src="assets/img/product/TahuWalik.png" alt="Tahu Walik">
+                        </span>
+                        <span class="product-name">Tahu Walik</span>
+                    </button>
+                    <button type="button" class="add-to-bag" aria-label="Masukkan Tahu Walik ke tas">
+                        <i data-feather="shopping-bag" aria-hidden="true"></i>
+                    </button>
+                </article>
+            </div>
+        </div>
+
+        <div class="menu-mode" data-menu="night" aria-label="Produk Asha Bucket">
+            <h3>Asha Bucket</h3>
+            <div class="product-grid">
+                <article class="product-item">
+                    <button type="button" class="product-detail-trigger" data-product-detail aria-haspopup="dialog" aria-label="Lihat detail Asha Bucket 1">
+                        <span class="product-art">
+                        <img src="assets/img/productBucket/1.png" alt="Asha Bucket 1">
+                        </span>
+                        <span class="product-name">Asha Bucket 1</span>
+                    </button>
+                    <button type="button" class="add-to-bag" aria-label="Masukkan Asha Bucket 1 ke tas">
+                        <i data-feather="shopping-bag" aria-hidden="true"></i>
+                    </button>
+                </article>
+                <article class="product-item">
+                    <button type="button" class="product-detail-trigger" data-product-detail aria-haspopup="dialog" aria-label="Lihat detail Asha Bucket 2">
+                        <span class="product-art">
+                        <img src="assets/img/productBucket/2.png" alt="Asha Bucket 2">
+                        </span>
+                        <span class="product-name">Asha Bucket 2</span>
+                    </button>
+                    <button type="button" class="add-to-bag" aria-label="Masukkan Asha Bucket 2 ke tas">
+                        <i data-feather="shopping-bag" aria-hidden="true"></i>
+                    </button>
+                </article>
+                <article class="product-item">
+                    <button type="button" class="product-detail-trigger" data-product-detail aria-haspopup="dialog" aria-label="Lihat detail Asha Bucket 3">
+                        <span class="product-art">
+                        <img src="assets/img/productBucket/3.png" alt="Asha Bucket 3">
+                        </span>
+                        <span class="product-name">Asha Bucket 3</span>
+                    </button>
+                    <button type="button" class="add-to-bag" aria-label="Masukkan Asha Bucket 3 ke tas">
+                        <i data-feather="shopping-bag" aria-hidden="true"></i>
+                    </button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="comments-section" id="comments" aria-labelledby="comments-title">
+        <div class="comments-inner">
+            <div class="comments-heading">
+                <span class="section-tag">Suara pelanggan</span>
+                <h2 id="comments-title">Kolom Komentar</h2>
+            </div>
+            <div class="comments-layout">
+                <div class="comment-list" id="comment-list" aria-live="polite"></div>
+                <form class="comment-form" id="comment-form">
+                    <h3 class="comment-form-title">Tinggalkan komentar</h3>
+                    <label for="comment-name">Nama</label>
+                    <input id="comment-name" name="name" type="text" maxlength="60" autocomplete="name" required>
+
+                    <label for="comment-message">Komentar</label>
+                    <textarea id="comment-message" name="message" rows="5" maxlength="500" required></textarea>
+
+                    <button class="comment-submit" type="submit">
+                        <span>Kirim komentar</span>
+                        <i data-feather="arrow-up-right" aria-hidden="true"></i>
+                    </button>
+                    <p class="comment-status" id="comment-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner">
+            <div class="contact-heading">
+                <span class="section-tag">AshaShopp</span>
+                <h2 id="contact-title">Kontak Kami</h2>
+                <p>Kami siap membantu Anda dengan pertanyaan atau permintaan lebih lanjut.</p>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps?q=Banjarmasin%2C%20Kalimantan%20Selatan&output=embed"
+                        title="Peta lokasi Banjarmasin"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <label class="contact-field">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span class="visually-hidden">Nama</span>
+                        <input type="text" name="name" placeholder="Nama" autocomplete="name" maxlength="60" required>
+                    </label>
+                    <label class="contact-field">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span class="visually-hidden">Email</span>
+                        <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+                    </label>
+                    <label class="contact-field">
+                        <i data-feather="phone" aria-hidden="true"></i>
+                        <span class="visually-hidden">No. Handphone</span>
+                        <input type="tel" name="phone" placeholder="No. Handphone" autocomplete="tel" maxlength="24" required>
+                    </label>
+                    <button class="contact-submit" type="submit">Kirim Pesan</button>
+                    <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-socials" aria-label="Media sosial">
+            <a href="https://www.instagram.com/ashashopp_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram AshaShopp">
+                <i data-feather="instagram" aria-hidden="true"></i>
+            </a>
+        </div>
+        <nav class="footer-nav" aria-label="Navigasi footer">
+            <a href="#home">Home</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+        <p class="footer-credit">Created by <a href="https://github.com/jakajah" target="_blank" rel="noopener noreferrer">JakaMaulanaIbrahim</a>. | &copy; <span data-current-year>2027</span></p>
+    </footer>
+
+    <div class="product-detail-shell" id="product-detail-shell" aria-hidden="true">
+        <button class="product-detail-backdrop" type="button" data-close-product-detail aria-label="Tutup detail produk"></button>
+        <section class="product-detail-dialog" id="product-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="product-detail-title" tabindex="-1">
+            <button type="button" class="product-detail-close" data-close-product-detail aria-label="Tutup detail produk">
+                <i data-feather="x" aria-hidden="true"></i>
+            </button>
+            <div class="product-detail-image">
+                <img data-detail-image alt="">
+            </div>
+            <div class="product-detail-copy">
+                <span class="section-tag" data-detail-category></span>
+                <h2 id="product-detail-title" data-detail-name></h2>
+                <button type="button" class="product-detail-add" data-detail-add>
+                    <i data-feather="shopping-bag" aria-hidden="true"></i>
+                    <span>Masukkan ke tas</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div class="bag-shell" id="bag-shell" aria-hidden="true">
+        <button class="bag-backdrop" type="button" data-close-bag aria-label="Tutup tas belanja"></button>
+        <aside class="bag-drawer" id="bag-drawer" role="dialog" aria-modal="true" aria-labelledby="bag-title" tabindex="-1">
+            <div class="bag-header">
+                <div>
+                    <span class="section-tag">AshaShopp</span>
+                    <h2 id="bag-title">Tas Belanja <span data-bag-total>(0)</span></h2>
+                </div>
+                <button type="button" class="bag-close" data-close-bag aria-label="Tutup tas belanja">
+                    <i data-feather="x" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="bag-items" aria-live="polite"></div>
+            <div class="bag-footer">
+                <a class="bag-order is-disabled" data-order-link aria-disabled="true" tabindex="-1">
+                    <i data-feather="message-circle" aria-hidden="true"></i>
+                    <span>Pesan via WhatsApp</span>
+                    <i data-feather="arrow-up-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
